@@ -1,6 +1,6 @@
 **This is my personal portfolio website, designed to showcase my skills, education, projects, and professional experience in a clean and modern interface.
 Built using HTML, CSS, and JavaScript, it features smooth animations, light/dark mode, and responsive design for all devices.
-
+**
 🚀 Key Highlights
 
 🎨 Minimalist, Responsive Design – Optimized for both desktop and mobile devices.
