@@ -3,197 +3,412 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sarathkumar Dunnapapagari — IT Graduate & Cloud Enthusiast</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Sarathkumar Dunnapapagari — IT Graduate skilled in Cloud, Machine Learning, and Web Development. Portfolio showcasing projects, skills, and education." />
-  <meta name="keywords" content="Sarathkumar, Portfolio, Cloud, AWS, GCP, Python, Java, Web Developer, IT Graduate" />
+  <title>Sarathkumar Dunnapapagari — Cloud & Software Engineer</title>
+  <meta name="description" content="Sarathkumar Dunnapapagari — M.Tech CSE student and B.Tech IT graduate seeking full-time Cloud, DevOps and Software roles. Skilled in AWS, GCP, Python, Java and web development." />
   <meta name="author" content="Sarathkumar Dunnapapagari" />
+  <meta name="theme-color" content="#0a0b10" />
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  <script>
+    try { if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  </script>
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader" aria-hidden="true">
-    <div class="loader"><div></div><div></div><div></div></div>
-  </div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
   <!-- Navigation -->
-  <nav class="site-nav" role="navigation">
-    <a href="#home" class="brand"><strong>Sarathkumar D.</strong></a>
-    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
-    <div id="primaryNav" class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <header id="home" class="site-hero">
-    <div class="hero-inner">
-      <img src="profile.jpg" alt="Sarathkumar Dunnapapagari" class="profile-pic" data-aos="zoom-in">
-      <h1 data-aos="fade-up">Hi — I'm <span class="typing"></span></h1>
-      <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">
-        IT Graduate • Cloud Enthusiast • Developer building scalable solutions
-      </p>
-      <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
-        <a href="sarathkumar.pdf" download class="btn"><i class="fa fa-download"></i> Resume</a>
-        <a href="#projects" class="btn ghost">View Projects</a>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="#home" class="brand"><span class="brand-mark">SD</span><span>Sarathkumar</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
       </div>
-    </div>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <a href="Sarathkumar_Resume.pdf" download class="btn btn-sm hide-sm"><i class="fas fa-file-arrow-down"></i> Resume</a>
+        <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- About -->
-    <section id="about" class="section" data-aos="fade-right">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="lead">
-          I am an IT graduate skilled in C, Java, Python, and cloud platforms (AWS & GCP).
-          I have hands-on experience in Data Science, Machine Learning, and Web Development.
-          Passionate about creating efficient and scalable solutions that make a difference.
+    <!-- Hero -->
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <span class="status-pill"><span class="dot"></span> Open to full-time roles · M.Tech CSE student</span>
+        <h1>Hi, I'm Sarathkumar.<br><span class="grad">I build on the cloud.</span></h1>
+        <p class="hero-sub">
+          Motivated IT graduate starting my career as a <strong class="rotator" id="rotator">Cloud Engineer</strong>.
+          Four internships across AWS, Python and machine learning: I turn ideas into reliable, scalable solutions.
         </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn">View my work <i class="fas fa-arrow-right"></i></a>
+          <a href="Sarathkumar_Resume.pdf" download class="btn btn-ghost"><i class="fas fa-file-arrow-down"></i> Download resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/sarathkumar-dunnapapagari" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/sarathdunna" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:dunna.sarathkumar@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <span class="loc"><i class="fas fa-location-dot"></i> Srikakulam, Andhra Pradesh · Open to relocate</span>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-ring">
+          <img src="profile.jpg" alt="Portrait of Sarathkumar Dunnapapagari" />
+        </div>
+        <div class="float-card fc-1"><i class="fab fa-aws"></i> AWS</div>
+        <div class="float-card fc-2"><i class="fab fa-google"></i> GCP</div>
+        <div class="float-card fc-3"><i class="fab fa-python"></i> Python</div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section" data-aos="fade-left">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skill-grid">
-          <div class="skill-card">
-            <h3><i class="fas fa-code"></i> Programming</h3>
-            <p>C • Java • Python</p>
-          </div>
-          <div class="skill-card">
-            <h3><i class="fas fa-cloud"></i> Cloud</h3>
-            <p>AWS • GCP • Docker • CI/CD</p>
-          </div>
-          <div class="skill-card">
-            <h3><i class="fas fa-laptop-code"></i> Web</h3>
-            <p>HTML • CSS • JavaScript</p>
-          </div>
-          <div class="skill-card">
-            <h3><i class="fas fa-tools"></i> Tools & OS</h3>
-            <p>Windows • Linux • Git • MS Office</p>
-          </div>
+    <!-- Stats strip -->
+    <section class="container stats reveal">
+      <div class="stat"><span class="num">7</span><span class="lbl">Projects built</span></div>
+      <div class="stat"><span class="num">4</span><span class="lbl">Internships &amp; training</span></div>
+      <div class="stat"><span class="num">5</span><span class="lbl">Certifications</span></div>
+      <div class="stat"><span class="num">2</span><span class="lbl">Cloud platforms</span></div>
+      <div class="stat"><span class="num">3</span><span class="lbl">Programming languages</span></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 · About</span>
+        <h2>From civil engineering to cloud computing</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card about-story reveal">
+          <p>
+            My journey started with a Diploma in Civil Engineering, where I learned how to plan, structure and build things that last.
+            Curiosity about technology pulled me into Information Technology, and I completed my B.Tech at
+            Sir C.R. Reddy College of Engineering, Eluru in 2024. I'm now pursuing an M.Tech in Computer Science and Engineering
+            at GMR Institute of Technology, Rajam (2025 – 2027).
+          </p>
+          <p>
+            Through internships I've deployed apps on <strong>AWS EC2 and S3</strong>, written <strong>Python</strong> automation, and built
+            <strong>machine learning</strong> models on real datasets. I bring an engineer's discipline and a learner's energy to every problem.
+          </p>
+        </div>
+        <div class="card looking-for reveal">
+          <h3><i class="fas fa-bullseye"></i> Roles I'm targeting</h3>
+          <ul class="role-list">
+            <li><i class="fas fa-cloud"></i> Cloud Engineer / Cloud Support Associate</li>
+            <li><i class="fas fa-gears"></i> DevOps Engineer (Trainee)</li>
+            <li><i class="fas fa-code"></i> Software Developer (Python / Java)</li>
+            <li><i class="fas fa-chart-line"></i> Junior Data / ML Engineer</li>
+          </ul>
+          <div class="avail"><span class="dot"></span> Open to full-time roles</div>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Master of Technology — Computer Science and Engineering</h3>
-              <p class="muted"><strong>GMRIT</strong>, Rajam — 2025–2027 | <strong>PURSUNING(8.4 CGPA UPTO 1st YEAR)</strong></p>
-            </div>
+    <!-- Experience -->
+    <section id="experience" class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 · Experience</span>
+        <h2>Internships &amp; training</h2>
+      </div>
+      <div class="exp-grid">
+        <article class="card exp reveal">
+          <div class="exp-head">
+            <div class="project-icon"><i class="fab fa-aws"></i></div>
+            <span class="score">2 months</span>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Bachelor of Technology — Information Technology</h3>
-              <p class="muted"><strong>Sir C.R. Reddy College of Engineering</strong>, Eluru — 2021–2025 | <strong>CGPA: 7.29</strong></p>
-            </div>
+          <h3>AWS Cloud Intern</h3>
+          <p class="org">BrainOVision Solutions</p>
+          <ul class="features">
+            <li>Deployed applications on AWS EC2, managed S3 storage and explored IAM roles.</li>
+            <li>Hands-on experience with cloud infrastructure setup and monitoring.</li>
+          </ul>
+          <div class="chips"><span>EC2</span><span>S3</span><span>IAM</span></div>
+        </article>
+        <article class="card exp reveal">
+          <div class="exp-head">
+            <div class="project-icon"><i class="fas fa-brain"></i></div>
+            <span class="score">6 months</span>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Diploma — Civil Engineering</h3>
-              <p class="muted"><strong>MRAGR Government Polytechnic</strong>, Vizianagaram — 2017–2021 | <strong>67.69%</strong></p>
-            </div>
+          <h3>Data Science &amp; ML Intern</h3>
+          <p class="org">APSCHE</p>
+          <ul class="features">
+            <li>Worked on predictive modeling and AI-based solutions for real-world applications.</li>
+            <li>Applied ML algorithms to datasets and improved accuracy through data preprocessing.</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>Machine Learning</span><span>Data preprocessing</span></div>
+        </article>
+        <article class="card exp reveal">
+          <div class="exp-head">
+            <div class="project-icon"><i class="fab fa-python"></i></div>
+            <span class="score">2 months</span>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>SSC</h3>
-              <p class="muted"><strong>Z P High School</strong>, Amalapadu — 2016–2017 | <strong>CGPA: 7.5</strong></p>
-            </div>
+          <h3>Python Developer Intern</h3>
+          <p class="org">BrainOVision Solutions</p>
+          <ul class="features">
+            <li>Developed automation scripts and small-scale applications in Python.</li>
+            <li>Improved program efficiency with optimized coding practices.</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>Automation</span></div>
+        </article>
+        <article class="card exp reveal">
+          <div class="exp-head">
+            <div class="project-icon"><i class="fas fa-building"></i></div>
+            <span class="score">6 months</span>
           </div>
+          <h3>Industrial Training</h3>
+          <p class="org">APSPHC</p>
+          <ul class="features">
+            <li>Exposure to infrastructure and technical workflows in public sector projects.</li>
+          </ul>
+          <div class="chips"><span>Infrastructure</span><span>Project workflows</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">03 · Skills</span>
+        <h2>My toolkit</h2>
+      </div>
+      <div class="bento">
+        <div class="card skill-card span-2 reveal">
+          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Platforms</h3>
+          <p class="muted">Deploying and managing applications on public cloud.</p>
+          <div class="chips"><span>AWS EC2</span><span>S3</span><span>IAM</span><span>GCP</span></div>
+        </div>
+        <div class="card skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Programming</h3>
+          <div class="chips"><span>Python</span><span>Java</span><span>C</span></div>
+        </div>
+        <div class="card skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <h3>Data & ML</h3>
+          <div class="chips"><span>Data Science</span><span>Machine Learning</span><span>Computer Vision</span></div>
+        </div>
+        <div class="card skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Web</h3>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+        <div class="card skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-cubes"></i></div>
+          <h3>Used in my projects</h3>
+          <div class="chips"><span>PyTorch</span><span>scikit-learn</span><span>YOLOv8</span><span>OpenCV</span><span>FastAPI</span><span>React</span><span>Docker</span></div>
+        </div>
+        <div class="card skill-card span-full reveal">
+          <div class="skill-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3>Tools & soft skills</h3>
+          <div class="chips"><span>Windows</span><span>Linux</span><span>Unix</span><span>MS Office</span><span>AutoCAD</span><span>Git & GitHub</span><span>Problem solving</span><span>Teamwork</span><span>Quick learner</span></div>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section" data-aos="fade-right">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-meta">
-              <h3>Smart Study Planner</h3>
-              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
-            </div>
-            <p>A web app that helps students plan and track their study schedules effectively.</p>
-            <ul class="project-features">
-              <li>Study planner with reminders</li>
-              <li>Responsive and user-friendly UI</li>
-            </ul>
-            <div class="project-actions">
-              <a href="https://sarathdunna.github.io/smartstudyplannerforstudents/" target="_blank" class="btn">Live Demo</a>
-              <a href="https://github.com/sarathdunna/smartstudyplannerforstudents" target="_blank" class="btn ghost">View Code</a>
-            </div>
-          </div>
+    <section id="projects" class="section container">
+      <div class="section-head section-head-row reveal">
+        <div>
+          <span class="eyebrow">04 · Projects</span>
+          <h2>Things I've built</h2>
+        </div>
+        <a href="https://github.com/sarathdunna" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fab fa-github"></i> All repositories</a>
+      </div>
 
-          <div class="project-card">
-            <div class="project-meta">
-              <h3>My Portfolio</h3>
-              <div class="badges"><span>HTML</span><span>CSS</span><span>JS</span></div>
-            </div>
-            <p>This portfolio website showcases my education, skills, and projects in a clean layout.</p>
-            <ul class="project-features">
-              <li>Fully responsive and animated</li>
-              <li>Dark/Light mode support</li>
-            </ul>
+      <div class="featured">
+        <article class="card project project-wide reveal">
+          <div class="project-body">
+            <span class="tag"><i class="fas fa-star"></i> Featured</span>
+            <h3>Construction Site Safety Monitor</h3>
+            <p class="muted">
+              Real-time video pipeline that watches webcam, CCTV (RTSP) or recorded footage, runs YOLOv8 detection,
+              and streams annotated frames and live detections to a React dashboard, built to support PPE-compliance checks on construction sites.
+            </p>
+            <div class="chips"><span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>FastAPI</span><span>React + TypeScript</span><span>Docker</span><span>AWS S3</span><span>Prometheus</span><span>Grafana</span></div>
             <div class="project-actions">
-              <a href="https://sarathdunna.github.io/myportfolio/" target="_blank" class="btn">Live Demo</a>
-              <a href="https://github.com/sarathdunna/myportfolio" target="_blank" class="btn ghost">View Code</a>
+              <a href="https://sarathdunna.github.io/construction-safety-monitor1/" target="_blank" rel="noopener" class="btn btn-sm">Project page <i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="https://github.com/sarathdunna/construction-safety-monitor1" target="_blank" rel="noopener" class="btn btn-sm btn-ghost"><i class="fab fa-github"></i> Code</a>
             </div>
           </div>
+          <ul class="highlights">
+            <li><i class="fas fa-video"></i><span><strong>Live streaming</strong> of annotated frames and detections over WebSocket</span></li>
+            <li><i class="fas fa-helmet-safety"></i><span><strong>PPE-ready design:</strong> helmet / vest violation alerts switch on when a custom model is plugged in</span></li>
+            <li><i class="fab fa-aws"></i><span><strong>Cloud-ready:</strong> S3 snapshots, Docker Compose, NGINX and an EC2 setup script</span></li>
+            <li><i class="fas fa-chart-line"></i><span><strong>Observability</strong> with Prometheus metrics and a Grafana dashboard</span></li>
+          </ul>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-top">
+            <div class="project-icon"><i class="fas fa-robot"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sarathdunna/AI-Agent" target="_blank" rel="noopener" aria-label="Data Analyst Agent source code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Data Analyst + ML Agent</h3>
+          <p class="muted">Full-stack platform for AI-assisted data analysis. Upload a dataset, then clean and explore it, ask questions in plain English or SQL, train and compare models, and export PDF reports.</p>
+          <ul class="features">
+            <li>EDA, charts, model training, explainability and predictions</li>
+            <li>Optional LLM explanations on top of code-computed results</li>
+            <li>Every core feature works without an API key</li>
+          </ul>
+          <div class="chips"><span>FastAPI</span><span>Pandas</span><span>DuckDB</span><span>scikit-learn</span><span>React</span><span>Tailwind</span></div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-top">
+            <div class="project-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/sarathdunna/emomusic" target="_blank" rel="noopener" aria-label="EmoMusic source code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>EmoMusic</h3>
+          <p class="muted">Music recommendations driven by real-time facial emotion recognition. It reads your expression from a webcam and builds a playlist that gradually moves you toward a calmer, more positive mood.</p>
+          <ul class="features">
+            <li>Transfer-learned CNN emotion classifier, fine-tuned on FER-2013</li>
+            <li>Smoothed predictions, so the mood and playlist don't flicker</li>
+            <li>Web UI with live webcam, emotion bars and audio player</li>
+          </ul>
+          <div class="chips"><span>PyTorch</span><span>timm</span><span>OpenCV</span><span>Computer Vision</span></div>
+        </article>
+      </div>
+
+      <h3 class="sub-head reveal">Machine learning &amp; web</h3>
+      <div class="mini-projects">
+        <a class="card mini reveal" href="https://sarathdunna.github.io/smartstudyplannerforstudents/" target="_blank" rel="noopener">
+          <div class="mini-top"><i class="fas fa-calendar-check"></i><i class="fas fa-arrow-up-right-from-square mini-gh"></i></div>
+          <h4>Smart Study Planner</h4>
+          <p class="muted">Responsive web app that helps students plan and track study schedules, with reminders.</p>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </a>
+        <a class="card mini reveal" href="https://github.com/sarathdunna/AI-SVM" target="_blank" rel="noopener">
+          <div class="mini-top"><i class="fas fa-satellite-dish"></i><i class="fab fa-github mini-gh"></i></div>
+          <h4>SVM from scratch</h4>
+          <p class="muted">Support Vector Machine built by solving the quadratic program with CVXOPT, used to classify pulsar stars.</p>
+          <div class="chips"><span>NumPy</span><span>CVXOPT</span></div>
+        </a>
+        <a class="card mini reveal" href="https://github.com/sarathdunna/AI-DL-Applications-in-Computer-Vision" target="_blank" rel="noopener">
+          <div class="mini-top"><i class="fas fa-eye"></i><i class="fab fa-github mini-gh"></i></div>
+          <h4>AlexNet on MNIST</h4>
+          <p class="muted">AlexNet CNN in PyTorch, trained and tested on a chosen pair of MNIST digits.</p>
+          <div class="chips"><span>PyTorch</span><span>CNN</span></div>
+        </a>
+        <a class="card mini reveal" href="https://github.com/sarathdunna/AI-K-MEANS" target="_blank" rel="noopener">
+          <div class="mini-top"><i class="fas fa-circle-nodes"></i><i class="fab fa-github mini-gh"></i></div>
+          <h4>K-Means clustering</h4>
+          <p class="muted">Clusters a housing dataset and searches a range of k values for the best-scoring clustering.</p>
+          <div class="chips"><span>scikit-learn</span><span>Pandas</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">05 · Education</span>
+        <h2>Learning path</h2>
+      </div>
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-date">2025 – 2027</span>
+          <div class="card tl-card">
+            <h3>M.Tech — Computer Science and Engineering</h3>
+            <p class="muted">GMR Institute of Technology, Rajam</p>
+            <span class="score">Pursuing</span>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-date">2021 – 2024</span>
+          <div class="card tl-card">
+            <h3>B.Tech — Information Technology</h3>
+            <p class="muted">Sir C.R. Reddy College of Engineering, Eluru</p>
+            <span class="score">CGPA 7.29</span>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-date">2017 – 2020</span>
+          <div class="card tl-card">
+            <h3>Diploma — Civil Engineering</h3>
+            <p class="muted">MRAGR Government Polytechnic, Vizianagaram</p>
+            <span class="score">67.69%</span>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-date">2016 – 2017</span>
+          <div class="card tl-card">
+            <h3>SSC</h3>
+            <p class="muted">Z P High School, Amalapadu</p>
+            <span class="score">CGPA 7.5</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section container">
+      <div class="section-head reveal">
+        <span class="eyebrow">06 · Certifications</span>
+        <h2>Certifications</h2>
+      </div>
+      <div class="certs">
+        <div class="card cert reveal">
+          <i class="fas fa-award"></i>
+          <div><h3>Introduction to Soft Skills</h3><p class="muted">TCS</p></div>
+        </div>
+        <div class="card cert reveal">
+          <i class="fab fa-google"></i>
+          <div><h3>Google Cloud Computing Foundations</h3><p class="muted">NPTEL</p></div>
+        </div>
+        <div class="card cert reveal">
+          <i class="fas fa-cloud"></i>
+          <div><h3>Cloud Computing</h3><p class="muted">NPTEL</p></div>
+        </div>
+        <div class="card cert reveal">
+          <i class="fab fa-aws"></i>
+          <div><h3>Getting Started with Amazon Web Services</h3><p class="muted">SkillUp</p></div>
+        </div>
+        <div class="card cert reveal">
+          <i class="fas fa-server"></i>
+          <div><h3>Faculty Development Program on Cloud Infrastructure</h3><p class="muted">BrainOVision</p></div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section" data-aos="zoom-in">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-info">
-          <p>Email: <a href="mailto:dunna.sarathkumar@gmail.com">dunna.sarathkumar@gmail.com</a></p>
-          <p>Phone: <a href="tel:+919553019135">+91 95530 19135</a></p>
-          <p class="socials">
-            <a href="https://www.linkedin.com/in/sarathkumardunnapapagari-cloudcomputing" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/sarathdunna" target="_blank"><i class="fab fa-github"></i></a>
-          </p>
+    <section id="contact" class="section container">
+      <div class="contact card reveal">
+        <span class="eyebrow">07 · Contact</span>
+        <h2>Let's work together</h2>
+        <p class="muted">I'm actively looking for a full-time role in cloud and software. If you have an opening or just want to connect, my inbox is open.</p>
+        <div class="contact-actions">
+          <a href="mailto:dunna.sarathkumar@gmail.com" class="btn"><i class="fas fa-envelope"></i> Say hello</a>
+          <button class="btn btn-ghost" id="copyEmail" data-email="dunna.sarathkumar@gmail.com"><i class="far fa-copy"></i> <span>Copy email</span></button>
+        </div>
+        <div class="contact-list">
+          <a href="mailto:dunna.sarathkumar@gmail.com"><i class="fas fa-envelope"></i> dunna.sarathkumar@gmail.com</a>
+          <a href="tel:+919553019135"><i class="fas fa-phone"></i> +91 95530 19135</a>
+          <a href="https://www.linkedin.com/in/sarathkumar-dunnapapagari" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/sarathdunna" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Sarathkumar Dunnapapagari. All rights reserved.</p>
+  <footer class="footer container">
+    <p>&copy; <span id="year"></span> Sarathkumar Dunnapapagari</p>
+    <a href="#home" class="muted">Back to top <i class="fas fa-arrow-up"></i></a>
   </footer>
 
-  <button id="topBtn" class="top-btn"><i class="fas fa-arrow-up"></i></button>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-

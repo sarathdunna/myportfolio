@@ -1,61 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // AOS
-  AOS.init({ duration: 900, once: true });
+  const root = document.documentElement;
 
-  // Footer Year
+  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Preloader
-  const preloader = document.getElementById('preloader');
-  window.addEventListener('load', () => {
-    preloader.style.opacity = '0';
-    setTimeout(() => preloader.remove(), 500);
-  });
-
-  // Theme Toggle
-  const body = document.body;
+  // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') body.classList.add('light-mode');
-
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-  });
-
-  // Typing Effect
-  const typing = document.querySelector('.typing');
-  const text = ['Sarathkumar Dunnapapagari', 'a Developer', 'a Cloud Enthusiast'];
-  let i = 0, j = 0, deleting = false;
-
-  function type() {
-    const current = text[i];
-    typing.textContent = deleting ? current.slice(0, --j) : current.slice(0, ++j);
-    if (!deleting && j === current.length) {
-      deleting = true;
-      setTimeout(type, 1200);
-    } else if (deleting && j === 0) {
-      deleting = false;
-      i = (i + 1) % text.length;
-      setTimeout(type, 300);
-    } else {
-      setTimeout(type, deleting ? 60 : 90);
-    }
-  }
-  type();
-
-  // Menu Toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('primaryNav');
-  menuToggle.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-  });
-
-  // Scroll To Top
-  const topBtn = document.getElementById('topBtn');
-  window.onscroll = () => {
-    topBtn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
+  const setIcon = () => {
+    themeToggle.innerHTML = root.dataset.theme === 'light'
+      ? '<i class="fas fa-moon"></i>'
+      : '<i class="fas fa-sun"></i>';
   };
-  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  setIcon();
+  themeToggle.addEventListener('click', () => {
+    if (root.dataset.theme === 'light') delete root.dataset.theme;
+    else root.dataset.theme = 'light';
+    try { localStorage.setItem('theme', root.dataset.theme === 'light' ? 'light' : 'dark'); } catch (e) {}
+    setIcon();
+  });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+    menuToggle.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+  }));
+
+  // Rotating role text
+  const rotator = document.getElementById('rotator');
+  const roles = ['Cloud Engineer', 'DevOps Engineer', 'Python Developer', 'Java Developer'];
+  let r = 0;
+  setInterval(() => {
+    rotator.classList.add('out');
+    setTimeout(() => {
+      r = (r + 1) % roles.length;
+      rotator.textContent = roles[r];
+      rotator.classList.remove('out');
+    }, 300);
+  }, 2600);
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 3) * 80}ms`;
+    io.observe(el);
+  });
+
+  // Active nav link
+  const links = [...navLinks.querySelectorAll('a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const navIo = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => s && navIo.observe(s));
+
+  // Copy email
+  const copyBtn = document.getElementById('copyEmail');
+  copyBtn.addEventListener('click', async () => {
+    const label = copyBtn.querySelector('span');
+    try {
+      await navigator.clipboard.writeText(copyBtn.dataset.email);
+      label.textContent = 'Copied!';
+    } catch (e) {
+      label.textContent = copyBtn.dataset.email;
+    }
+    setTimeout(() => { label.textContent = 'Copy email'; }, 2000);
+  });
 });
