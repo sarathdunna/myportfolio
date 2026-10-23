@@ -33,5 +33,5 @@ Then visit http://localhost:5500.
 ## Contact
 
 - Email: dunna.sarathkumar@gmail.com
-- LinkedIn: [sarathkumar-dunnapapagari](https://www.linkedin.com/in/sarathkumar-dunnapapagari)
+- LinkedIn: [sarathkumardunnapapagari-cloudcomputing](https://www.linkedin.com/in/sarathkumardunnapapagari-cloudcomputing)
 - GitHub: [sarathdunna](https://github.com/sarathdunna)
